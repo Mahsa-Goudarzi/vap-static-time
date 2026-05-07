@@ -132,7 +132,6 @@ html, body, [class*="css"] {
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.14em;
-    text-transform: uppercase;
     color: #7dd3fc;
     margin-bottom: 0.4rem;
     margin-top: 1.2rem;
