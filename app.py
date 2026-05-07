@@ -677,13 +677,13 @@ with tab2:
 
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown('<p class="section-label">d — Trip Distance (km)</p>', unsafe_allow_html=True)
+        st.markdown('<p class="section-label">d: Trip Distance (km)</p>', unsafe_allow_html=True)
         d_df = st.data_editor(
             default_1row(tl, 60.0), use_container_width=True, hide_index=True,
             key=f"d_table_{n_t}",
         )
 
-        st.markdown('<p class="section-label">d_origin — Depot → Trip Origin (km)</p>',
+        st.markdown('<p class="section-label">d_origin: Depot → Trip Origin (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip, Column = Vehicle")
         dor_df = st.data_editor(
@@ -692,7 +692,7 @@ with tab2:
             key=f"dor_table_{n_t}_{n_v}",
         )
 
-        st.markdown('<p class="section-label">d_dest — Trip Destination → Depot (km)</p>',
+        st.markdown('<p class="section-label">d_dest: Trip Destination → Depot (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip, Column = Vehicle")
         dd_df = st.data_editor(
@@ -702,7 +702,7 @@ with tab2:
         )
 
     with col2:
-        st.markdown('<p class="section-label">ε — Repositioning Distance (km)</p>',
+        st.markdown('<p class="section-label">ε: Repositioning Distance (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip n (origin), Column = Trip k (destination). Diagonal = 0.")
         eps_df = st.data_editor(
@@ -711,7 +711,7 @@ with tab2:
             key=f"eps_table_{n_t}",
         )
 
-        st.markdown('<p class="section-label">O — Combinability Matrix (0 / 1)</p>',
+        st.markdown('<p class="section-label">O: Combinability Matrix (0 / 1)</p>',
                     unsafe_allow_html=True)
         st.caption("1 = trips can be combined. Diagonal must be 0.")
         O_df = st.data_editor(
@@ -728,7 +728,7 @@ with tab3:
 
     col_tau, col_pi = st.columns(2)
     with col_tau:
-        st.markdown('<p class="section-label">τ — Planned Execution Day</p>', unsafe_allow_html=True)
+        st.markdown('<p class="section-label">τ: Planned Execution Day</p>', unsafe_allow_html=True)
         st.caption(f"One value per trip. Must be in [1 … {len(periods)}].")
         tau_df = st.data_editor(
             default_1row(tl, 1), use_container_width=True, hide_index=True,
@@ -736,7 +736,7 @@ with tab3:
         )
 
     with col_pi:
-        st.markdown('<p class="section-label">π — Penalty Coefficient (€/day)</p>',
+        st.markdown('<p class="section-label">π: Penalty Coefficient (€/day)</p>',
                     unsafe_allow_html=True)
         st.caption("Cost per day of deviation from planned day.")
         pi_df = st.data_editor(
@@ -745,7 +745,7 @@ with tab3:
         )
 
     # preview delta table
-    st.markdown('<p class="section-label">Δ Preview — Penalty Days per (Trip, Period)</p>',
+    st.markdown('<p class="section-label">Δ Preview: Penalty Days per (Trip, Period)</p>',
                 unsafe_allow_html=True)
     try:
         tau_vals = {n: int(tau_df.iloc[0, n]) for n in trips}
@@ -771,7 +771,7 @@ with tab4:
                           use_container_width=False)
 
     if solve_btn and ready:
-        with st.spinner("Solving — please wait..."):
+        with st.spinner("Solving... please wait..."):
             try:
                 # parse all inputs
                 z = {(r, n): (1 if n in trips_of_carrier[r] else 0)
