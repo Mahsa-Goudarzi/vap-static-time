@@ -293,7 +293,7 @@ def default_op_cost(carriers, all_vehicles, vehicles_of_carrier):
     for r in carriers:
         row = []
         for v in all_vehicles:
-            row.append(0.7 if v in vehicles_of_carrier[r] else 9999.0)
+            row.append(0.7 if v in vehicles_of_carrier[r] else 1000.0)
         rows.append(row)
     df = pd.DataFrame(rows, index=cl, columns=vl)
     return df.reset_index().rename(columns={"index": "Carrier ↓ / Vehicle →"})
@@ -626,7 +626,7 @@ with tab1:
 
     with col_b:
         st.markdown('<p class="section-label">Operating Cost  op_cost (€/km)</p>', unsafe_allow_html=True)
-        st.markdown('<div class="info-box">Row = Carrier, Column = Vehicle. Use <strong>9999</strong> for vehicles not owned by that carrier.</div>',
+        st.markdown('<div class="info-box">Row = Carrier, Column = Vehicle. Use <strong>1000</strong> for vehicles not owned by that carrier.</div>',
                     unsafe_allow_html=True)
 
         op_default = default_op_cost(carriers, all_vehicles, vehicles_of_carrier)
