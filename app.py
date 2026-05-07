@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 st.set_page_config(
-    page_title="VAP Optimizer — Time-Indexed",
+    page_title="VAP Optimizer: Time-Indexed",
     page_icon="🚛",
     layout="wide",
     initial_sidebar_state="expanded",
