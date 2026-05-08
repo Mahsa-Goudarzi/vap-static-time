@@ -464,12 +464,6 @@ with st.sidebar:
     st.markdown("# 🚛 VAP Optimizer")
     st.markdown("*Time-Indexed Cooperative Planning*")
 
-    if st.button("↺  Reset to Base Scenario", use_container_width=True):
-        for k, v in BASE.items():
-            st.session_state[k] = v
-        st.session_state.solved = False
-        st.rerun()
-
     st.markdown("---")
     st.markdown("### Dimensions")
     nc  = st.number_input("Carriers",             1, 8,  int(st.session_state.n_carriers),  key="n_carriers")
