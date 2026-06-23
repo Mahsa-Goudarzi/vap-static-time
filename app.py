@@ -545,7 +545,7 @@ with tab1:
         ev_count = sum(is_electric.values())
         st.caption(f"⚡ {ev_count} electric · 🛢 {n_v-ev_count} diesel")
 
-        st.markdown('<p class="section-label">Cargo Weight p (kg)</p>', unsafe_allow_html=True)
+        st.markdown('<p class="section-label">Cargo Weight p (tonnes)</p>', unsafe_allow_html=True)
         p_df = st.data_editor(base_1row("p", t_labels), use_container_width=True,
                                hide_index=True, key=f"p_{n_t}")
 
@@ -560,7 +560,7 @@ with tab1:
                                use_container_width=True, hide_index=True,
                                key=f"op_{n_c}_{n_v}")
 
-        st.markdown('<p class="section-label">Vehicle Capacity Cap (kg)</p>', unsafe_allow_html=True)
+        st.markdown('<p class="section-label">Vehicle Capacity Cap (tonnes)</p>', unsafe_allow_html=True)
         cap_df = st.data_editor(base_1row("Cap", v_labels), use_container_width=True,
                                 hide_index=True, key=f"cap_{n_v}")
 
