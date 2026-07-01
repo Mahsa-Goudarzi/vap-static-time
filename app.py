@@ -512,7 +512,7 @@ valid = (sum(tpc)==int(nt))
 if not valid:
     st.markdown(f'<div class="warn-box">⚠ Trip distribution ({sum(tpc)}) ≠ total trips ({int(nt)}). Fix in sidebar.</div>', unsafe_allow_html=True)
 else:
-    st.markdown(f'<div class="info-box">📐 {n_c} carriers · {n_t} trips · {n_v} vehicles · {len(periods)} periods — all tables adapt automatically.</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="info-box">📐 {n_c} carriers · {n_t} trips · {n_v} vehicles · {len(periods)} periods · all tables adapt automatically.</div>', unsafe_allow_html=True)
 
 tab1, tab2, tab3, tab4 = st.tabs([
     "🚛  Fleet Setup",
